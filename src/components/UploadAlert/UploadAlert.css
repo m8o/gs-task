@@ -1,0 +1,26 @@
+.gs_task_upload_alert {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  top: -26px;
+  transition-duration: 100ms;
+}
+.gs_task_upload_alert-alert {
+  pointer-events: none;
+  border-radius: 12px;
+  height: 24px;
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+  padding: 0 16px;
+}
+.error {
+  background-color: rgb(228, 87, 87);
+}
+.success {
+  background-color: rgb(81, 170, 81);
+}
+.gs_task_upload_alert-alert--on {
+  top: 8px;
+  transition-duration: 100ms;
+}

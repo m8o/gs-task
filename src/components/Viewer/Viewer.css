@@ -1,0 +1,40 @@
+.gs_task_viewer--document {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 16px;
+  margin: 16px auto;
+  overflow: hidden;
+}
+.gs_task_viewer--document---single-page {
+  grid-template-columns: 1fr;
+}
+.gs_task_viewer--document--page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.react-pdf__Page__canvas {
+  border: 1px solid black;
+  margin: 0;
+  display: inline;
+}
+.react-pdf__Page__textContent,
+.react-pdf__Page__annotations {
+  display: none;
+}
+.gs_task_viewer--document-header,
+.gs_task_viewer--document-footer--page-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.gs_task--status {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .gs_task_viewer--document {
+    grid-template-columns: 1fr;
+  }
+}

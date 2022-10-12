@@ -1,0 +1,20 @@
+.gs_task_upload_input {
+  margin: 36px 16px 16px;
+  height: 20vh;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed black;
+  position: relative;
+}
+.gs_task_upload_input-input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.gs_task_upload_input:hover {
+  background-color: gainsboro;
+}
