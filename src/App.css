@@ -2,4 +2,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+.gs_task_version {
+  padding: 4px;
+  box-sizing: border-box;
+  font-size: 9px;
+  font-weight: bold;
+  color: rgb(190, 190, 190);
 }
