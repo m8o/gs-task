@@ -80,13 +80,10 @@ const Viewer = (props) => {
 
     return () => {};
   }, [props.pageCount, props.pdfFile]);
+
   if (!props.pdfFile) {
     return <div className="gs_task--status">No PDFs loaded</div>;
   } else {
-    let documentClassNamesArray = ["gs_task_viewer--document "];
-    if (props.pageCount === 1) {
-      documentClassNamesArray.push("gs_task_viewer--document---single-page");
-    }
     return (
       <div className="gs_task_viewer">
         <div className={"gs_task_viewer--document-header"}>
@@ -107,7 +104,7 @@ const Viewer = (props) => {
           </RoundButon>
         </div>
         <Document
-          className={documentClassNamesArray.join(" ")}
+          className={"gs_task_viewer--document "}
           file={props.pdfFile}
           onLoadSuccess={props.onLoadSuccess}
         >
@@ -129,30 +126,28 @@ const Viewer = (props) => {
           )}
         </Document>
         {props.pageCount && (
-          <div className="gs_task_viewer--document-footer">
-            <div className="gs_task_viewer--document-footer--page-switcher">
-              {pageNumbers.secondSide && (
-                <RoundButon
-                  onClick={() => {
-                    pageSwitchHandler("back");
-                  }}
-                >
-                  {"<"}
-                </RoundButon>
-              )}
-              {pageNumbers.firstSide}{" "}
-              {pageNumbers.secondSide && " - " + pageNumbers.secondSide} /
-              {props.pageCount}
-              {pageNumbers.secondSide && (
-                <RoundButon
-                  onClick={() => {
-                    pageSwitchHandler("foward");
-                  }}
-                >
-                  {">"}
-                </RoundButon>
-              )}
-            </div>
+          <div className="gs_task_viewer--document_footer">
+            {pageNumbers.secondSide && (
+              <RoundButon
+                onClick={() => {
+                  pageSwitchHandler("back");
+                }}
+              >
+                {"<"}
+              </RoundButon>
+            )}
+            {pageNumbers.firstSide}{" "}
+            {pageNumbers.secondSide && " - " + pageNumbers.secondSide} /
+            {props.pageCount}
+            {pageNumbers.secondSide && (
+              <RoundButon
+                onClick={() => {
+                  pageSwitchHandler("foward");
+                }}
+              >
+                {">"}
+              </RoundButon>
+            )}
           </div>
         )}
       </div>

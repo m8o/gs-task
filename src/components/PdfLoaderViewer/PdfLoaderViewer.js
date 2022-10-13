@@ -37,7 +37,7 @@ const PdfLoaderViewer = () => {
   }
   return (
     <>
-      <UploadAlert message={alertMessage} />
+      <UploadAlert message={alertMessage.message} type={alertMessage.type} />
       <UploadInput onChangehandler={pdfSelectHandler} />
       <Viewer
         pdfFile={pdfFile}
